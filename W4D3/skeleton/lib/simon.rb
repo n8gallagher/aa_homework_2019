@@ -14,14 +14,21 @@ class Simon
   end
 
   def take_turn
-
+    self.show_sequence
+    self.require_sequence
   end
 
   def show_sequence
-    
+    self.add_random_color
+    p seq
   end
 
   def require_sequence
+    if self.game_over?
+      self.round_success_message
+    else
+      self.game_over_message
+    end
 
   end
 
@@ -30,11 +37,11 @@ class Simon
   end
 
   def round_success_message
-
+    puts "Great job, #{seq.join(" ")} was the correct guess!"
   end
 
   def game_over_message
-
+    puts "Sorry, the correct answer was #{seq.join(" ")} you lose"
   end
 
   def reset_game

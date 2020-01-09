@@ -9,7 +9,10 @@ describe Dessert do
   let(:chef) { double("chef") }
 
   describe "#initialize" do
+  let(:chef) { double("chef") }
     it "sets a type"
+
+    expect {:chef.type}.to not_raise_error
 
     it "sets a quantity"
 
